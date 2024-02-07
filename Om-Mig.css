@@ -1,0 +1,460 @@
+/* TOC 
+   1.CSS-Reset
+   2.Typografi
+   3.Layout
+   4.Om Mig
+   5.Rapport
+*/
+
+/* css-reset */
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* TYPOGRAFI */
+h1 {
+    padding-left: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rapport-container p{
+    font-size: 1.125em;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 27px;
+}
+
+.rapport-container h3{
+    font-size:1.3125em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.om-mig-text h1 {
+    padding-left: 0 ;
+}
+
+h1 a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4{
+    font-size: 2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.sub-header,.sub-hero{
+    margin-top:-1.5%;  
+}
+
+.sub-header{
+    text-align: center;
+    padding: 0 2em 0 2em ;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ingress{
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer p{
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* LAYOUT */
+    
+/* centrerar all text, lägger till en background
+så det syns att det är en header samt en padding
+så menyn är lägre "upp" i boxen, padding = inne
+margin = ute */
+header{
+    background: #f8f8f8;
+    border: 1px solid black ;
+    height: 100%;
+}
+
+/* Sätter höjden på bilden så den täcker hela sidan, 
+så att den inte repeatar och så den täcker hela ytan 
+när det skalar */
+.hero-img{
+    background-image: url(./Bilder/Hero_Img.jpg);
+    height: 100%;     
+    background-position:bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed ;
+    background-color: lightgray;
+    background-blend-mode: multiply;
+}
+
+/* Positionerar och stylar texten över bilden */
+.hero-text{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content : flex-start;
+    align-content: flex-start;
+    padding-left: 5%;
+    padding-top: 15%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Håller allt inom container till en max
+brädd av 960px, men håller allt under 960px 
+till 90% av brädden samt centrerar innehållet */
+.container{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #040f0f;
+}
+    
+
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Stylar knapparna, tar bort understrukningen,
+centrerar texten, tar bort kanten, sätter en trasition time,
+ */
+.button {
+    border: none;
+    padding: 1em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    width: 20%;
+  }
+
+.button a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Tar bort bakgrunden och lägger till en border när man
+håller muspekaren över, samt när
+någon med synnedsättning har linken
+i fokus */
+.hero-button:hover, 
+.pitch-button:hover,
+.hero-button:focus, 
+.pitch-button:focus{
+    border:1px solid black;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+/* Index */
+
+/* HEADER */
+
+/* tar bort punkten brevid listan och paddingen samt 
+    positionerar listan i mitten av flexboxen */
+.toc, nav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding-right: 1em;
+}
+    
+/* Lägger till en margin för att få lite "luft" mellan, uppe
+och nere på listelementen */
+.toc, nav li{ 
+    margin: 0.5em;
+}
+
+/* Tar bort understrukningen, ändrar färg,
+gör texten tjockare och lägger till en 
+"klickbar" yta på mobil genom en padding */
+.toc, nav a{
+    font-size: 1.25em;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 0.25em;
+    transition-duration:0.4s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Byter färg på linkarna när man
+håller muspekaren över, samt när
+någon med synnedsättning har linken
+i fokus */
+.toc, nav a:hover,
+    nav a:focus{
+    border-bottom: 1px solid #707070;
+    color: aquamarine;
+}
+
+/* En indikator som visar vilken sida du är inne på */
+nav .active{
+    border-bottom: 1px solid #707070;
+    padding-bottom: 5px;
+}
+
+/* MAIN */
+
+/*Stylar main taggen*/
+main{
+    background-color: lightgrey;
+}
+
+/*Stylar grid-container, säger hur mycket plats varje
+column ska ta, vilken ordning dem ska visas i, avståndet mellan
+columnerna*/
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'aside-1 main aside-2';
+    column-gap: 3em;
+    margin:10em 3em 0 3em;
+    padding-bottom:2em;
+}
+
+.header-container{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'om-mig-bild om-mig-text';
+}
+
+/*Stylar min så kallade "säljes pitch" text, centrerar den 
+samt texten och säger åt vilket håll den ska flexa åt*/
+.grid-pitch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:4em 0 0 0;
+}
+
+/*Styling på main, ger den "luft" åt vänster och höger
+samt ger den namnet "main" så "griden" vet vilken som
+är vilken*/
+.main{
+    background-color: white;
+    padding: 0 1em 0 1em;
+    grid-area: main;
+    border: 1px solid black;
+}
+
+/*Styling och positionering på bilden inom main*/
+.main img{
+    border-radius: 50%;
+    width: 12.5em;
+    height: 12.5em;
+    margin-top:-6em;
+    border: 1px solid black;
+}
+/*Styling på paragraferna inom main*/
+.main p{
+    padding-top:1em;
+}
+
+/*Positionering på bilderna så dem hamnar centrerade 
+när det är mindre enheter*/
+.center{
+    display: block;
+    margin:0 auto;
+}
+
+/*Styling på aside-1, ger den "luft" åt vänster och höger
+samt ger den namnet "aside-1" så "griden" vet vilken som
+är vilken*/
+.aside-1{
+    background-color: white;
+    padding: 0 1em 0 1em;
+    grid-area: aside-1;
+    border: 1px solid black;
+}
+
+/*Styling och positionering på bilden inom aside-2*/
+.aside-1 img{
+    border-radius: 50%;
+    width: 12.5em;
+    height: 12.5em;
+    margin-top:-6em;
+    border: 1px solid black;
+    float: left;
+}
+
+/*Styling på paragraferna inom aside-1, samt 
+en clear så texten inte "hoppar" upp*/
+.aside-1 p{
+    padding-top:1.5em;
+    clear:left
+}
+
+/*Styling på aside-2, ger den "luft" åt vänster och höger
+samt ger den namnet "aside-2" så "griden" vet vilken som
+är vilken*/
+.aside-2{
+    background-color: white;
+    padding: 0 1em 0 1em;
+    grid-area: aside-2;
+    border: 1px solid black;
+}
+
+/*Styling och positionering på bilden inom aside-2*/
+.aside-2 img{
+    border-radius: 50%;
+    width: 12.5em;
+    height: 12.5em;
+    margin-top:-6em;
+    border: 1px solid black;
+    float: right;
+}
+
+/*Styling på paragraferna inom aside-2, samt 
+en clear så texten inte "hoppar" upp*/
+.aside-2 p{
+    padding-top:1.5em;
+    clear: right;
+}
+
+/* FOOTER */
+
+/*Sätter height till auto så det "växer" eller "krymper" 
+beroende på innehåll, width till 100% så min footer
+täcker hela veiwporten*/
+footer{
+    background:  #040f0f;
+    height: auto;
+    width: 100%;
+    color: #fff;
+    margin: 0 auto;
+}
+
+/*Sätter display flex så det ska skala bra till alla 
+enheter, centrerar innehållet samt text. Säger sedan
+åt vilket håll det ska flexa åt*/
+.footer-content{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/*Tar bort list stil elementen, sätter flex för dem ska
+hamna bevid varandra, (samt så dem ska skala bra på alla
+enheter) centrerar innehållet och ger lite "luft" genom
+padding top och right*/
+.socials{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0 0 0;
+}
+
+/*Sätter en margin 0 top och botten, men 0.625em (ca10px)
+vänster och höger på list elementen */
+.socials li{
+    margin: 0 0.625em;
+}
+
+/*Styling på själva länkarna*/
+.socials a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    padding: 0 1em 0 0;
+}
+
+/* Byter färg på linkarna när man
+håller muspekaren över, samt när
+någon med synnedsättning har linken
+i fokus */
+.socials a:hover,
+.socials a:focus{
+    color: aquamarine;
+    transition-duration: 0.4s;
+}
+
+/*Sätter display flex så det ska skala bra till alla 
+enheter, säger åt vilket håll det ska flexa åt och
+hur innehållet ska vara utspiritt*/
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: -1em 0 1em 0;
+}
+
+/*Stylar den vänstra columnen*/
+.left{
+    padding-left:2em;
+}
+
+.left p{
+    margin-top: -2em;
+}
+/*Stylar den högra columnen*/
+.right{
+    padding-right:2em;
+}
+
+.right p{
+    margin-top: -2em;
+}
+/*Styling på den mittersta columnen*/
+.mitten p{
+    margin-top:-2em;
+}
+
+/* Om Mig */
+
+.om-mig-bild{
+    height: 100%;
+    background-image: url(./Bilder/MF.jpeg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-area: om-mig-bild;
+}
+
+.om-mig-text{
+    grid-area: om-mig-text;
+    height:100%;
+    padding: 4em;
+    font-family: 'monserat',sans-serif;
+}
+
+.om-mig-text h1{
+    font-size:3em;
+}
+
+.om-mig-text p{
+    font-size:1.125em ;
+    line-height: 27px;
+}
+/* Rapport */
+
+.rapport-container{
+    margin:0 2em 0 2em;
+}
